@@ -1,3 +1,4 @@
 @extends('layouts.main')
 
-@section(conten)
+@section('content');
+ <h1>Welcome</h1>

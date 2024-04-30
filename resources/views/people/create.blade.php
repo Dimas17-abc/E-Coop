@@ -10,18 +10,16 @@
             @endforeach
         </div>
     @endif
-    </div>
-    @endif
 
     <form action="{{ route('person.store') }}" method="post">
         @csrf
 
         <div class="mb-2">
-            <label for="">Nama</label>
+            <label for="">Nama: </label>
             <input type="text" name="name" class="form-control" placeholder="isi nama" id="">
         </div>
         <div class="mb-2">
-            <input type="submit" value="simpan" class="btn btn-succes">
+            <input type="submit" value="simpan" class="btn btn-success">
         </div>
     </form>
 @endsection
