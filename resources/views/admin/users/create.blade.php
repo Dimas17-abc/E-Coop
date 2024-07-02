@@ -28,6 +28,7 @@
 
 
 {!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
+<link rel="stylesheet" href="public/css/regis.css">
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">

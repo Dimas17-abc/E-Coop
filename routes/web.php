@@ -23,12 +23,22 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-  
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
 Route::resource('roles', RoleController::class);
 Route::resource('users', UserController::class);
+
+
+// Contoh penggunaan middleware yang benar
+Route::group(['middleware' => ['role:admin']], function () {
+    Route::resource('roles', RoleController::class);
+});
+
+
+Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
 
 Route::get('customer/create', [CustomerController::class, 'create'])->name('customer.create');
 Route::post('customer/store', [CustomerController::class, 'store'])->name('customer.store');
