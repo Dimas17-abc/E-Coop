@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -7,6 +8,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MandatorySavingController;
 use App\Http\Controllers\CustomerController;
 
+=======
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PersonController;
+>>>>>>> 519d056291fcfc67a547d63fc1f7bd084e471e1a
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +28,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -54,3 +61,14 @@ Route::resource('mandatory-saving', MandatorySavingController::class);
 
 
 });
+=======
+Route::get('/nasabah/index', [CustomerController::class, 'index']);
+Route::get('/nasabah/showaddress/{param}', [CustomerController::class, 'showaddress']);
+
+// student
+
+Route::get('/nasabah/GetStudent/{name}/{code}', [CustomerController::class, 'GetStudent']);
+
+Route::get('/person/create',[PersonController::class, 'create'])->name('person.create');
+Route::post('/person/store',[PersonController::class, 'store'])->name('person.store');
+>>>>>>> 519d056291fcfc67a547d63fc1f7bd084e471e1a

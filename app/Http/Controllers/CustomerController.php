@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\Customer;
 
 class CustomerController extends Controller
@@ -80,5 +81,18 @@ class CustomerController extends Controller
         }else {
             dd('Data Gagal Disimpan');
         }
+=======
+
+class CustomerController extends Controller
+{
+    public function index(){
+        echo "Hallo orang baik";
+    }
+    public function showaddress($address){
+        echo "alamat di". $address;
+    }
+    public function GetStudent($name, $code){
+        echo "nama saya " . $name , " NRP: " .$code;
+>>>>>>> 519d056291fcfc67a547d63fc1f7bd084e471e1a
     }
 }
