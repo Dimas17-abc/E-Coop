@@ -161,11 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-<<<<<<< HEAD
-        Spatie\Permission\PermissionServiceProvider::class,
-=======
->>>>>>> 519d056291fcfc67a547d63fc1f7bd084e471e1a
-
+        Spatie\Permission\PermissionServiceProvider::class, // Pastikan baris ini tidak tertinggal
         /*
          * Package Service Providers...
          */

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use App\Models\Customer;
 
 class CustomerController extends Controller
@@ -35,7 +34,7 @@ class CustomerController extends Controller
     }
 
     public function show($id) {
-        //SELECT * from customer where id - $id
+        //SELECT * from customer where id = $id
         $customer = Customer::find($id);
 
         return view('customers.show', compact('customer'));
@@ -53,15 +52,15 @@ class CustomerController extends Controller
         return view('customers.edit', compact('customer'));
     }
 
-    public function update(Request $request) {
+    public function update(Request $request, $id) {
         $this->validate($request, [
             'name' => 'required|max:30',
             'phone' => 'max:15',
             'address' => 'required'
         ]);
 
-        // INSERT INTO customers(code,name,phone,address) values ('')
-        $customer = Customer::find($request->id);
+        // UPDATE customers SET name = ?, phone = ?, address = ? WHERE id = ?
+        $customer = Customer::find($id);
         $customer->name = $request->name;
         $customer->phone = $request->phone;
         $customer->address = $request->address;
@@ -78,21 +77,16 @@ class CustomerController extends Controller
 
         if($customer->delete()) {
             return redirect()->route('customer.index')->with('success', "Data Berhasil di Hapus");
-        }else {
-            dd('Data Gagal Disimpan');
+        } else {
+            dd('Data Gagal Dihapus');
         }
-=======
+    }
 
-class CustomerController extends Controller
-{
-    public function index(){
-        echo "Hallo orang baik";
+    public function showaddress($address) {
+        echo "alamat di ". $address;
     }
-    public function showaddress($address){
-        echo "alamat di". $address;
-    }
-    public function GetStudent($name, $code){
-        echo "nama saya " . $name , " NRP: " .$code;
->>>>>>> 519d056291fcfc67a547d63fc1f7bd084e471e1a
+
+    public function GetStudent($name, $code) {
+        echo "nama saya " . $name . ", NRP: " . $code;
     }
 }
